@@ -1,1 +1,59 @@
-zsh: command not found: strace
+write(1, "Choose an option (1-5): ", 24Choose an option (1-5): ) = 24
+read(0, 4
+"4\n", 1024)                    = 2
+write(1, "\n", 1
+)                       = 1
+write(1, "Comparing file operation methods"..., 36Comparing file operation methods...
+) = 36
+write(1, "Comparing file reading methods f"..., 51Comparing file reading methods for: /proc/version
+
+) = 51
+write(1, "=== Method 1: Using System Calls"..., 37=== Method 1: Using System Calls ===
+) = 37
+openat(AT_FDCWD, "/proc/version", O_RDONLY) = 3
+read(3, "Linux version 6.14.0-29-generic "..., 255) = 225
+write(1, "Linux version 6.14.0-29-generic "..., 225Linux version 6.14.0-29-generic (buildd@lcy02-amd64-105) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #29~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Aug 14 16:52:50 UTC 2
+) = 225
+read(3, "", 255)                        = 0
+close(3)                                = 0
+write(1, "\n", 1
+)                       = 1
+write(1, "=== Method 2: Using Library Func"..., 42=== Method 2: Using Library Functions ===
+) = 42
+openat(AT_FDCWD, "/proc/version", O_RDONLY) = 3
+read(3, "Linux version 6.14.0-29-generic "..., 1024) = 225
+write(1, "Linux version 6.14.0-29-generic "..., 225Linux version 6.14.0-29-generic (buildd@lcy02-amd64-105) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #29~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Aug 14 16:52:50 UTC 2
+) = 225
+read(3, "", 1024)                       = 0
+close(3)                                = 0
+write(1, "\n", 1
+)                       = 1
+write(1, "NOTE: Run this program with stra"..., 58NOTE: Run this program with strace to see the difference!
+) = 58
+write(1, "Example: strace -e trace=openat,"..., 56Example: strace -e trace=openat,read,write,close ./lab2
+) = 56
+write(1, "\n", 1
+)                       = 1
+write(1, "=== Process Information Lab ===\n", 32=== Process Information Lab ===
+) = 32
+write(1, "1. List all process directories\n", 321. List all process directories
+) = 32
+write(1, "2. Read process information\n", 282. Read process information
+) = 28
+write(1, "3. Show system information\n", 273. Show system information
+) = 27
+write(1, "4. Compare file operation method"..., 344. Compare file operation methods
+) = 34
+write(1, "5. Exit\n", 85. Exit
+)                = 8
+write(1, "Choose an option (1-5): ", 24Choose an option (1-5): ) = 24
+read(0, 0x59fd675686b0, 1024)           = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+--- SIGWINCH {si_signo=SIGWINCH, si_code=SI_KERNEL} ---
+read(0, 0x59fd675686b0, 1024)           = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+--- SIGWINCH {si_signo=SIGWINCH, si_code=SI_KERNEL} ---
+read(0, 5
+"5\n", 1024)                    = 2
+write(1, "Exiting program. Goodbye!\n", 26Exiting program. Goodbye!
+) = 26
++++ exited with 0 +++
+
